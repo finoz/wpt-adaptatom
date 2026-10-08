@@ -1,0 +1,41 @@
+// Adapta-tom - gradienti
+// I valori vengono da theme.json → var(--wp--preset--gradient--*)
+
+// Utility class per applicare il gradient brand a sfondi
+.has-brand-gradient-background {
+    background: var(--wp--preset--gradient--brand);
+}
+
+// Testo con gradient (clip)
+@mixin gradient-text($gradient : var(--wp--preset--gradient--brand)) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.has-brand-gradient-text {
+    @include gradient-text(var(--wp--preset--gradient--brand));
+}
+
+// ── Sfondo pagina ─────────────────────────────────────────────────────────────
+// Bianco con due aloni rosa agli angoli (basso-sinistra e alto-destra), come nel
+// Figma. Gli stop finali sono trasparenti per sovrapporsi correttamente.
+body {
+    background-color: var(--wp--preset--color--white);
+    background-image:
+        linear-gradient(35deg,  var(--wp--preset--color--blush) 1%,  rgba(255, 255, 255, 0) 16.5%),
+        linear-gradient(225deg, var(--wp--preset--color--blush) 0%,  rgba(255, 255, 255, 0) 36%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+// Home: cielo azzurro sopra l'alone (alto 1059px nel Figma)
+body.home {
+    background-image:
+        var(--wp--preset--gradient--sky),
+        linear-gradient(35deg,  var(--wp--preset--color--blush) 1%,  rgba(255, 255, 255, 0) 16.5%),
+        linear-gradient(225deg, var(--wp--preset--color--blush) 0%,  rgba(255, 255, 255, 0) 36%);
+    background-size: 100% 105.9rem, auto, auto;
+    background-position: top center, 0 0, 0 0;
+    background-attachment: scroll, fixed, fixed;
+}

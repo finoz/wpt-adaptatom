@@ -1,0 +1,78 @@
+// CTA card - blocco colorato con titolo, testo e link-freccia
+// Usata in home (due affiancate, angoli asimmetrici) e a fine pagina (angoli tondi).
+// Markup: pattern adaptatom/cta-card. L'intera card e' cliccabile (stretched link).
+
+.cta-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: var(--space-m);
+	min-height: 46rem;
+	padding: var(--space-m);
+	border-radius: var(--wp--custom--radius--lg);
+	color: var(--wp--preset--color--white);
+
+	// richiamo alle specificita' di WP per .has-background (padding di default)
+	&.has-background { padding: var(--space-m); border-radius: var(--wp--custom--radius--lg); }
+
+	> * { margin: 0; }
+
+	&__title {
+		font-size: var(--wp--preset--font-size--display);
+		line-height: 1.1;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin-top: 3.2rem !important;
+		font-size: var(--wp--preset--font-size--md);
+		line-height: 1.3;
+	}
+
+	// il link inherits colore e occupa tutta la card
+	.wp-block-buttons {
+		margin: 0;
+		.wp-block-button__link {
+			font-size: var(--wp--preset--font-size--base);
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border-radius: inherit;
+			}
+		}
+	}
+
+	&:focus-within { outline: 3px solid currentColor; outline-offset: 3px; }
+
+	// angoli come nel Figma: due spigoli grandi, due piccoli
+	&--left {
+		border-radius: 6rem 1rem 1rem 6rem;
+		&.has-background { border-radius: 6rem 1rem 1rem 6rem; }
+	}
+	&--right {
+		border-radius: 1rem 6rem 6rem 1rem;
+		&.has-background { border-radius: 1rem 6rem 6rem 1rem; }
+	}
+
+	// versione compatta a fine pagina
+	&--compact {
+		min-height: 0;
+		gap: 2.4rem;
+		.cta-card__title { font-size: var(--wp--preset--font-size--xl); }
+		.cta-card__text  { margin-top: 0 !important; font-size: var(--wp--preset--font-size--base); line-height: 1.6; }
+	}
+}
+
+.cta-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-inline: 0;
+	@media (min-width: 768px) {
+		flex-direction: row;
+		align-items: stretch;
+		> .cta-card { flex: 1 1 0; }
+	}
+}

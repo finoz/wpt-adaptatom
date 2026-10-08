@@ -1,0 +1,150 @@
+// Home - sezioni specifiche (hero, news, partner, finanziamento)
+// Tutte vivono dentro wp:post-content, quindi nel grid con colonne
+// full / wide / content / reading (vedi _layout.scss).
+
+// Titolo di sezione (64px maiuscolo) - classe applicata ai wp:heading
+.section-title {
+	margin: 0;
+	font-size: var(--wp--preset--font-size--display);
+	line-height: 1.1;
+}
+
+.wp-block-post-content > * + .home-block { margin-block-start: var(--space-l); }
+
+// Il contenuto della home e' tutto "wide": le sezioni occupano la colonna wide,
+// salvo diversa indicazione
+body.home .wp-block-post-content > * {
+	grid-column: wide-start / wide-end;
+}
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
+
+.home-hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-l);
+	text-align: center;
+	// 80px sotto l'header come nel Figma
+	padding-top: var(--space-l);
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3.2rem;
+		max-width: 91.2rem;
+		> * { margin: 0; }
+	}
+
+	&__lead {
+		max-width: 52.2rem;
+		font-size: var(--wp--preset--font-size--base);
+		line-height: 1.3;
+	}
+
+	.wp-block-buttons {
+		justify-content: center;
+		gap: 3.2rem;
+	}
+
+	// Emblema pomodoro: svg 381x436 (include l'ombra)
+	&__emblem {
+		width: 38.1rem;
+		max-width: 80%;
+		aspect-ratio: 381 / 436;
+		margin: -2rem 0 0;
+		background: url('../images/emblem.svg') no-repeat center / contain;
+	}
+}
+
+// ── Card CTA affiancate ───────────────────────────────────────────────────────
+// Stili in blocks/_cta-card.scss
+
+// ── News ──────────────────────────────────────────────────────────────────────
+
+.home-news {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 4rem;
+		@media (min-width: 1024px) {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+			align-items: stretch;
+		}
+		> * { margin: 0; }
+	}
+
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		gap: 3.2rem;
+		> * { margin: 0; }
+		p { font-size: var(--wp--preset--font-size--md); line-height: 1.3; }
+	}
+}
+
+// ── Partner ───────────────────────────────────────────────────────────────────
+
+.home-partners {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	gap: var(--space-l);
+	@media (min-width: 1024px) {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 68.4rem);
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 3.2rem;
+		> * { margin: 0; }
+		p { font-size: var(--wp--preset--font-size--md); line-height: 1.3; }
+	}
+
+	&__media {
+		margin: 0;
+		aspect-ratio: 1;
+		border-radius: var(--wp--custom--radius--lg);
+		overflow: hidden;
+		img { width: 100%; height: 100%; object-fit: cover; display: block; }
+	}
+}
+
+// ── Finanziamento (loghi + note legali) ───────────────────────────────────────
+
+.home-funding {
+	padding-block: var(--space-l);
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
+	align-items: center;
+
+	&__logos {
+		margin: 0;
+		width: 100%;
+		max-width: 136.6rem;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			mix-blend-mode: darken;
+		}
+	}
+
+	&__note,
+	&__text {
+		margin: 0;
+		width: 100%;
+		max-width: var(--grid-content);
+		font-size: var(--wp--preset--font-size--xxs);
+		line-height: 1.3;
+	}
+}

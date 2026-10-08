@@ -1,0 +1,75 @@
+// Tipografia adaptatom
+// Sora (testi e titoli) + IBM Plex Sans (UI: nav, bottoni, meta)
+
+// ── Scala responsive - override WP custom properties via :root ─────────────────
+//
+// theme.json definisce i valori MOBILE (il default WP).
+// Qui sovrascriviamo le stesse variabili per desktop.
+//
+//  slug      mobile    desktop    uso nel Figma
+//  xxs       1.4rem    1.4rem     note legali
+//  xs        1.6rem    1.6rem     meta, tag, copyright
+//  base      1.8rem    2.0rem     testo corrente, nav, bottoni
+//  md        2.0rem    2.4rem     testo card, lead home
+//  lg        2.2rem    2.8rem     lead pagina
+//  xl        2.4rem    3.2rem     titolo card pagina
+//  xxl       2.8rem    3.6rem     titolo sezione nei contenuti (h2)
+//  display   3.6rem    6.4rem     titoli sezione home
+//  headline  4.8rem    8.0rem     titolo pagina (h1)
+
+@media (min-width: 769px) {
+    :root {
+        --wp--preset--font-size--base:     2.0rem;
+        --wp--preset--font-size--md:       2.4rem;
+        --wp--preset--font-size--lg:       2.8rem;
+        --wp--preset--font-size--xl:       3.2rem;
+        --wp--preset--font-size--xxl:      3.6rem;
+        --wp--preset--font-size--display:  6.4rem;
+        --wp--preset--font-size--headline: 8.0rem;
+    }
+}
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+
+body {
+    font-family: var(--wp--preset--font-family--sans);
+    font-size: var(--wp--preset--font-size--base);
+    color: var(--wp--preset--color--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+// Headings -> Sora SemiBold maiuscolo, line-height stretto
+h1, h2, h3, h4, h5, h6,
+.wp-block-heading {
+    font-family: var(--wp--preset--font-family--display);
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    &:is(h1) { font-size: var(--wp--preset--font-size--headline); }
+    &:is(h2) { font-size: var(--wp--preset--font-size--xxl);      }
+    &:is(h3) { font-size: var(--wp--preset--font-size--xl);       }
+    &:is(h4) { font-size: var(--wp--preset--font-size--lg);       }
+    &:is(h5) { font-size: var(--wp--preset--font-size--md);       }
+    &:is(h6) { font-size: var(--wp--preset--font-size--base);     }
+}
+
+// Testi UI (Plex SemiBold maiuscolo): bottoni, link-freccia, nav
+.u-ui {
+    font-family: var(--wp--preset--font-family--ui);
+    font-weight: 600;
+}
+
+// Link nel contenuto editoriale
+.entry-content,
+.wp-block-post-content {
+    a:not([class]) {
+        color: var(--wp--preset--color--primary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}

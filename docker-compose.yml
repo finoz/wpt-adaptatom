@@ -1,0 +1,50 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    depends_on:
+      - db
+    ports:
+      - "${WP_PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER:-wp}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-wp}
+      WORDPRESS_DB_NAME: ${DB_NAME:-adaptatom}
+      WORDPRESS_DEBUG: "1"
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('SCRIPT_DEBUG', true);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+    volumes:
+      - ./wp-content/themes/adaptatom:/var/www/html/wp-content/themes/adaptatom
+      - ../wpt-ficus:/var/www/html/wp-content/themes/ficus
+    networks:
+      - adaptatom
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-adaptatom}
+      MYSQL_USER: ${DB_USER:-wp}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-wp}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - adaptatom
+
+  adminer:
+    image: adminer
+    depends_on:
+      - db
+    ports:
+      - "${PMA_PORT:-8081}:8080"
+    networks:
+      - adaptatom
+
+volumes:
+  db_data:
+
+networks:
+  adaptatom:

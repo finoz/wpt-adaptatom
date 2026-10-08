@@ -1,0 +1,47 @@
+// Separatori
+// Default: linea sottile. "special" = onda del brand (maschera su wave.svg),
+// come nel Figma (due moduli da 400px = 800px).
+
+.wp-block-separator {
+	margin-block: var(--space-m);
+	color: var(--wp--preset--color--primary);
+	border: 0;
+	border-bottom: 2px solid currentColor;
+	width: 100%;
+	grid-column: reading;
+	&.is-style-wide {
+		grid-column: content;
+	}
+	&.is-style-dots {
+		position: relative;
+		overflow: visible;
+		width: 0.8rem;
+		height: 0.8rem;
+		border: 0;
+		background: var(--wp--preset--color--primary);
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			display: inline-block;
+			width: 0.8rem;
+			height: 0.8rem;
+			background: var(--wp--preset--color--primary);
+			top: 0;
+		}
+		&::before { left: -1.6rem; }
+		&::after  { right: -1.6rem; }
+	}
+	&.is-style-special:is(hr, div),
+	&.site-footer__separator:is(hr, div) {
+		border: 0;
+		height: 2.6rem;
+		width: min(80rem, 100%);
+		margin-inline: auto;
+		background-color: var(--wp--preset--color--primary);
+		-webkit-mask: url('../images/wave.svg') repeat-x center / 40rem 2.6rem;
+		mask: url('../images/wave.svg') repeat-x center / 40rem 2.6rem;
+		margin-block: var(--space-l);
+		grid-column: content;
+	}
+}

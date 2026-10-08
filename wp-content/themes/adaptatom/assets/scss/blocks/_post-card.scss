@@ -1,0 +1,93 @@
+// Card articolo (news)
+// Verticale: meta (categoria + data) -> immagine 4:3 -> titolo.
+// Il pattern adaptatom/post-card ha .post-card__meta; il template archivio di ficus
+// usa .post-card__body (categoria, titolo, excerpt): gli stili coprono entrambi.
+
+.post-card {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+	height: 100%;
+
+	> * { margin: 0; }
+
+	&__meta,
+	.post-card__meta {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.6rem;
+	}
+
+	// tag e data: Plex Medium 16 maiuscolo
+	.wp-block-post-terms,
+	.wp-block-post-date {
+		margin: 0;
+		font-family: var(--wp--preset--font-family--ui);
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+
+	.wp-block-post-terms {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		[class*="separator"] { display: none; }
+
+		a {
+			display: inline-flex;
+			padding: 0.8rem 0.6rem;
+			line-height: 1;
+			border: 1px solid currentColor;
+			border-radius: var(--wp--custom--radius--sm);
+			color: inherit;
+			text-decoration: none;
+			pointer-events: none;
+		}
+	}
+
+	.wp-block-post-featured-image {
+		margin: 0;
+		aspect-ratio: 4 / 3;
+		border-radius: var(--wp--custom--radius--md);
+		overflow: hidden;
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 400ms ease;
+		}
+	}
+	&:hover .wp-block-post-featured-image img { transform: scale(1.03); }
+
+	.wp-block-post-title,
+	.post-card__title {
+		font-family: var(--wp--preset--font-family--display);
+		font-size: var(--wp--preset--font-size--md);
+		font-weight: 600;
+		line-height: 1;
+		text-transform: none;
+		margin: 0;
+		a {
+			text-decoration: none;
+			&:hover { color: var(--wp--preset--color--primary); }
+		}
+	}
+
+	.post-card__body {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.wp-block-post-excerpt {
+		margin: 0;
+		font-size: var(--wp--preset--font-size--xs);
+	}
+}

@@ -1,0 +1,47 @@
+// Post list - griglie di card
+
+.blog {
+	.site-main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-inline: var(--site-padding);
+		padding-block: 2.4rem;
+		max-width: var(--grid-content);
+		margin-inline: auto;
+	}
+}
+
+.posts-grid {
+	.wp-block-post-template {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-m) 4rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		> li { display: flex; margin: 0; }
+	}
+
+	// listato archivio: 3 colonne in wide
+	&.posts-grid--archive {
+		padding-inline: var(--site-padding);
+		max-width: var(--grid-wide);
+		margin-inline: auto;
+		.wp-block-post-template {
+			@media (min-width: 1024px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+		}
+	}
+
+	.wp-block-query-no-results {
+		grid-column: 1 / -1;
+		text-align: center;
+		color: var(--wp--preset--color--text-light);
+		padding-block: var(--space-l);
+	}
+}
