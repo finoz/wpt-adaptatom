@@ -26,9 +26,8 @@
 	.wp-block-post-date {
 		margin: 0;
 		font-family: var(--wp--preset--font-family--ui);
-		font-size: var(--wp--preset--font-size--xs);
+		font-size: var(--wp--preset--font-size--xxs);
 		font-weight: 500;
-		line-height: 1.4;
 		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
@@ -76,18 +75,8 @@
 		margin: 0;
 		a {
 			text-decoration: none;
+			color: inherit;
 			&:hover { color: var(--wp--preset--color--primary); }
 		}
-	}
-
-	.post-card__body {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.wp-block-post-excerpt {
-		margin: 0;
-		font-size: var(--wp--preset--font-size--xs);
 	}
 }

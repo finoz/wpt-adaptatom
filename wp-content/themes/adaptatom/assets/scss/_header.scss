@@ -40,15 +40,15 @@ header.wp-block-template-part {
 
 // ── Home: header trasparente sul cielo, testo bianco, solo wordmark ───────────
 // Dopo lo scroll (.is-scrolled, vedi main.ts) torna bianco con logo completo.
-body.home header.wp-block-template-part:not(.is-scrolled) {
-	background-color: transparent;
-	color: var(--wp--preset--color--white);
-
-	.site-header__logo img {
-		// ritaglia l'icona (68px su 283 = 24%) e rende il wordmark bianco
-		clip-path: inset(0 0 0 24%);
-		margin-left: calc(var(--logo-h) * -1.7);
-		filter: brightness(0) invert(1);
+body {
+	header.wp-block-template-part:not(.is-scrolled) {
+		background-color: transparent;
+		
+	}
+	&.home {
+		header.wp-block-template-part:not(.is-scrolled) {
+			color: var(--wp--preset--color--white);
+		}
 	}
 }
 
