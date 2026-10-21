@@ -14,6 +14,8 @@
 // ── IMG semplice ──────────────────────────────────────────────────────────────
 
 .wp-block-image {
+	display: flex;
+	flex-direction: column;
 	img { border-radius: var(--wp--custom--radius--md); }
 	figcaption {
 		margin-top: 0.8rem;
@@ -22,6 +24,13 @@
 		&::before {
 			content: '↑ ';
 		}
+	}
+
+	&.aligncenter {
+		align-items: center;
+	}
+	&.alignright {
+		align-items: flex-end;
 	}
 }
 

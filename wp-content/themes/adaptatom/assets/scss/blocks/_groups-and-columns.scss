@@ -48,6 +48,12 @@
 	justify-content: flex-start;
 }
 
+.wp-block-group.is-vertical.is-layout-flex {
+	> * {
+		flex-grow: 1;
+	}
+}
+
 // Space-between: primo elemento in cima, ultimo in fondo
 // Utile per card con heading+testo in cima e button in fondo
 .wp-block-group.is-style-valign-space-between {
