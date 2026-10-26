@@ -22,7 +22,6 @@
 		gap: var(--space-l);
 		align-items: flex-start;
 		flex-wrap: wrap !important;
-		margin-bottom: var(--space-xl);
 	}
 
 	// ── Brand: emblema + tagline ──────────────────────────────────────────
@@ -31,7 +30,7 @@
 		flex-direction: row;
 		gap: 4rem;
 		align-items: flex-start;
-		max-width: 59.8rem;
+		max-width: 40rem;
 		@media (min-width: 768px) {
 			margin-right: auto;
 		}
@@ -39,14 +38,14 @@
 
 	&__emblem {
 		flex-shrink: 0;
-		width: 24rem;
-		height: 28.3rem;
+		width: 12rem;
+		height: 12rem;
 		background: url('../images/footer-emblem.svg') no-repeat center / contain;
 	}
 
 	&__tagline {
 		margin: 0;
-		font-size: var(--wp--preset--font-size--md);
+		font-size: var(--wp--preset--font-size--sm);
 		line-height: 1.4;
 	}
 
@@ -98,14 +97,6 @@
 				text-decoration: underline;
 			}
 		}
-	}
-
-	// ── Onda separatrice ──────────────────────────────────────────────────
-	&__separator.wp-block-separator {
-		margin-block: 0 var(--space-s);
-		margin-inline: auto;
-		grid-column: auto;
-		background-color: var(--wp--preset--color--white);
 	}
 
 	// ── Bottom bar ────────────────────────────────────────────────────────

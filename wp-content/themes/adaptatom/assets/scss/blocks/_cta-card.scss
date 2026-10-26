@@ -49,7 +49,9 @@
 	// angoli come nel Figma: due spigoli grandi, due piccoli
 	&--left {
 		border-radius: 6rem 1rem 1rem 6rem;
-		&.has-background { border-radius: 6rem 1rem 1rem 6rem; }
+		&.has-background { 
+			border-radius: 6rem 1rem 1rem 6rem;
+		}
 	}
 	&--right {
 		border-radius: 1rem 6rem 6rem 1rem;

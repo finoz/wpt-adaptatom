@@ -8,8 +8,8 @@
 ?>
 <!-- wp:group {"align":"wide","className":"cta-cards","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide cta-cards">
-	<!-- wp:group {"className":"cta-card cta-card--left","backgroundColor":"accent","textColor":"white","layout":{"type":"default"}} -->
-	<div class="wp-block-group cta-card cta-card--left has-white-color has-accent-background-color has-text-color has-background">
+	<!-- wp:group {"className":"cta-card cta-card--left","backgroundColor":"ground","textColor":"white","layout":{"type":"default"}} -->
+	<div class="wp-block-group cta-card cta-card--left has-white-color has-ground-background-color has-text-color has-background">
 		<!-- wp:group {"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
 			<!-- wp:heading {"level":2,"className":"cta-card__title","fontSize":"display"} -->
@@ -30,8 +30,8 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"cta-card cta-card--right","backgroundColor":"sky","textColor":"white","layout":{"type":"default"}} -->
-	<div class="wp-block-group cta-card cta-card--right has-white-color has-sky-background-color has-text-color has-background">
+	<!-- wp:group {"className":"cta-card cta-card--right","backgroundColor":"waves","textColor":"white","layout":{"type":"default"}} -->
+	<div class="wp-block-group cta-card cta-card--right has-white-color has-waves-background-color has-text-color has-background">
 		<!-- wp:group {"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
 			<!-- wp:heading {"level":2,"className":"cta-card__title","fontSize":"display"} -->

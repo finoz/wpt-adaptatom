@@ -67,6 +67,16 @@
           "name": "Azzurro cielo"
         },
         {
+          "slug": "ground",
+          "color": "#ff9b00",
+          "name": "Arancio terreno"
+        },
+        {
+          "slug": "waves",
+          "color": "#8eb5e1",
+          "name": "Azzurro onde"
+        },
+        {
           "slug": "blush",
           "color": "#ffd9d9",
           "name": "Rosa tenue"
@@ -107,11 +117,6 @@
           "slug": "brand",
           "name": "Rosso",
           "gradient": "linear-gradient(88deg, #dc2525 13%, #950d0d 99%)"
-        },
-        {
-          "slug": "button",
-          "name": "Bottone",
-          "gradient": "linear-gradient(90deg, #dc2525 0%, #761414 100%)"
         },
         {
           "slug": "sky",

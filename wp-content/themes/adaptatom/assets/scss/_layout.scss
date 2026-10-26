@@ -320,8 +320,12 @@
 	max-width: var(--grid-wide);
 	margin-inline: auto;
 	padding-inline: var(--site-padding);
-	padding-block: var(--space-l) var(--space-m);
+	padding-block: var(--space-l);
+	margin-bottom: var(--space-l);
 	font-family: var(--wp--preset--font-family--display);
+	// separatore ondulato: dimensione nativa, centrato e croppato ai bordi dell'header
+	background: url('../images/long-wave.svg') no-repeat center bottom;
+	background-size: auto;
 
 	@media (min-width: 1024px) {
 		grid-template-columns: 24rem 1fr;

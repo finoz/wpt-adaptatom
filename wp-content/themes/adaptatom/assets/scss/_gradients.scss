@@ -6,6 +6,20 @@
     background: var(--wp--preset--gradient--brand);
 }
 
+// Pattern come sfondi: in theme.json sono colori di palette (ground, waves) e il
+// colore resta quello di .has-{slug}-background-color. Qui si aggiunge solo la
+// texture sopra, semitrasparente.
+// ground: illustrazione unica (943x965), non un tile: copre la card e si ritaglia.
+// waves: tile piccolo che si ripete.
+.has-ground-background-color {
+    background-image: url('../images/pattern-ground.svg');
+	background-position: center;
+}
+.has-waves-background-color {
+    background-image: url('../images/pattern-wave.svg');
+    background-position: center;
+}
+
 // Testo con gradient (clip)
 @mixin gradient-text($gradient : var(--wp--preset--gradient--brand)) {
     background: $gradient;
@@ -32,10 +46,8 @@ body {
 // Home: cielo azzurro sopra l'alone (alto 1059px nel Figma)
 body.home {
     background-image:
-        var(--wp--preset--gradient--sky),
-        linear-gradient(35deg,  var(--wp--preset--color--blush) 1%,  rgba(255, 255, 255, 0) 16.5%),
-        linear-gradient(225deg, var(--wp--preset--color--blush) 0%,  rgba(255, 255, 255, 0) 36%);
+        var(--wp--preset--gradient--sky);
     background-size: 100% 105.9rem, auto, auto;
     background-position: top center, 0 0, 0 0;
-    background-attachment: scroll, fixed, fixed;
+    background-attachment: scroll;
 }

@@ -52,6 +52,9 @@ export default defineConfig( ( { mode } ) => {
             port,
             strictPort: true,
             cors:       true,
+            // gli url() nel CSS iniettato nella pagina WP (porta 8080) devono
+            // puntare al dev server, altrimenti gli asset non inlinati vanno in 404
+            origin:     `http://localhost:${port}`,
             watch:      { usePolling: true },
         },
     }
