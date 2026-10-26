@@ -48,14 +48,23 @@
 
 	// angoli come nel Figma: due spigoli grandi, due piccoli
 	&--left {
-		border-radius: 6rem 1rem 1rem 6rem;
-		&.has-background { 
+		border-radius: 6rem 6rem 1rem 1rem;
+		&.has-background {border-radius: 6rem 6rem 1rem 1rem;}
+		@media (min-width: 1024px) {
 			border-radius: 6rem 1rem 1rem 6rem;
+			&.has-background { 
+				border-radius: 6rem 1rem 1rem 6rem;
+			}
 		}
 	}
 	&--right {
-		border-radius: 1rem 6rem 6rem 1rem;
-		&.has-background { border-radius: 1rem 6rem 6rem 1rem; }
+		border-radius: 1rem 1rem 6rem 6rem;
+		&.has-background { border-radius: 1rem 1rem 6rem 6rem;}
+		@media (min-width: 1024px) {
+			border-radius: 1rem 6rem 6rem 1rem;
+			&.has-background { border-radius: 1rem 6rem 6rem 1rem; }
+		}
+
 	}
 
 	// versione compatta a fine pagina
@@ -72,7 +81,7 @@
 	flex-direction: column;
 	gap: 2rem;
 	margin-inline: 0;
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		flex-direction: row;
 		align-items: stretch;
 		> .cta-card { flex: 1 1 0; }

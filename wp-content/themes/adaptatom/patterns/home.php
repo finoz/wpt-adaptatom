@@ -9,5 +9,3 @@
 <!-- wp:pattern {"slug":"adaptatom/home-hero"} /-->
 <!-- wp:pattern {"slug":"adaptatom/home-cards"} /-->
 <!-- wp:pattern {"slug":"adaptatom/home-news"} /-->
-<!-- wp:pattern {"slug":"adaptatom/home-partners"} /-->
-<!-- wp:pattern {"slug":"adaptatom/home-funding"} /-->

@@ -3,30 +3,29 @@
  * Title: Home - Hero
  * Slug: adaptatom/home-hero
  * Categories: adaptatom-home
- * Description: Testo di apertura, due bottoni e emblema pomodoro.
+ * Description: Logo centrato, testo di apertura e due bottoni.
  */
 ?>
-<!-- wp:group {"align":"wide","className":"home-hero","layout":{"type":"default"}} -->
+<!-- wp:group {"align":"wide","className":"home-hero","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group alignwide home-hero">
-	<!-- wp:group {"className":"home-hero__text","layout":{"type":"default"}} -->
-	<div class="wp-block-group home-hero__text">
-		<!-- wp:paragraph {"className":"home-hero__lead"} -->
-		<p class="home-hero__lead">Un progetto per valorizzare il territorio, sostenere le imprese agricole e promuovere pratiche innovative e sostenibili.</p>
-		<!-- /wp:paragraph -->
-		<!-- wp:buttons -->
-		<div class="wp-block-buttons">
-			<!-- wp:button -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Scopri il progetto</a></div>
-			<!-- /wp:button -->
-			<!-- wp:button {"className":"is-style-outline"} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#">Scopri altre cose</a></div>
-			<!-- /wp:button -->
-		</div>
-		<!-- /wp:buttons -->
+	<!-- wp:image {"id":74,"sizeSlug":"full","linkDestination":"none","align":"center","className":"home-hero__logo"} -->
+	<figure class="wp-block-image aligncenter size-full home-hero__logo"><img src="/wp-content/uploads/2026/10/adaptatom-logo-senza-scritta-1.png" alt="" class="wp-image-74"/></figure>
+	<!-- /wp:image -->
+
+	<!-- wp:paragraph {"align":"center"} -->
+	<p class="has-text-align-center">Un progetto per valorizzare il territorio, sostenere le imprese agricole e promuovere pratiche innovative e sostenibili.</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+	<div class="wp-block-buttons">
+		<!-- wp:button -->
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Scopri il progetto</a></div>
+		<!-- /wp:button -->
+
+		<!-- wp:button {"className":"is-style-outline"} -->
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">Scopri altre cose</a></div>
+		<!-- /wp:button -->
 	</div>
-	<!-- /wp:group -->
-	<!-- wp:group {"className":"home-hero__emblem","layout":{"type":"default"}} -->
-	<div class="wp-block-group home-hero__emblem" role="img" aria-label="Emblema Adapta-tom"></div>
-	<!-- /wp:group -->
+	<!-- /wp:buttons -->
 </div>
 <!-- /wp:group -->
