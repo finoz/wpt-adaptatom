@@ -18,7 +18,7 @@ const viteDevFlag = ( port: number, flagFile: string ): Plugin => ( {
     },
 } )
 
-export default defineConfig( ( { mode } ) => {
+export default defineConfig( ( { mode, command } ) => {
     // Carica le variabili dal file .env nella root del tema.
     // Il terzo argomento '' rimuove il filtro sul prefisso VITE_,
     // così VITE_PORT è disponibile anche se non ha prefisso VITE_.
@@ -30,6 +30,10 @@ export default defineConfig( ( { mode } ) => {
         plugins: [ viteDevFlag( port, flagFile ) ],
 
         root: resolve( __dirname, 'assets' ),
+
+        // In build gli url() del CSS devono essere relativi al file CSS (assets/dist/assets/),
+        // altrimenti con base '/' puntano a /assets/... nella root del sito e vanno in 404.
+        base: command === 'build' ? './' : '/',
 
         build: {
             outDir:      resolve( __dirname, 'assets/dist' ),
