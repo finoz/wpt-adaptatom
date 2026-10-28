@@ -6,8 +6,8 @@
  * Description: Card con sfondo onde, angoli tondi, titolo, testo e link-freccia. Per chiudere una pagina.
  */
 ?>
-<!-- wp:group {"align":"wide","className":"cta-card cta-card--compact","backgroundColor":"waves","textColor":"white","layout":{"type":"default"}} -->
-<div class="wp-block-group cta-card cta-card--compact is-style-reading-width has-white-color has-waves-background-color has-text-color has-background">
+<!-- wp:group {"align":"wide","className":"cta-card cta-card--compact is-style-reading-width","backgroundColor":"waves","textColor":"white","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide cta-card cta-card--compact is-style-reading-width has-white-color has-waves-background-color has-text-color has-background">
 	<!-- wp:heading {"level":2,"className":"cta-card__title"} -->
 	<h2 class="wp-block-heading cta-card__title">Conosci i partner</h2>
 	<!-- /wp:heading -->
